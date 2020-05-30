@@ -29,17 +29,38 @@ namespace WpfApp1
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var f = new Save(null);
+            f.ShowDialog();
+            ReadDatabase();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var item = CustomerListView.SelectedItem as Customer;
+            if (item == null)
+            {
+                MessageBox.Show("選択してください");
+                return;
+            }
+            var f = new Save(item);
+            f.ShowDialog();
+            ReadDatabase();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var item = CustomerListView.SelectedItem as Customer;
+            if (item == null)
+            {
+                MessageBox.Show("選択してください");
+                return;
+            }
+            using (var connection = new SQLiteConnection(App.DatabasePath))
+            {
+                connection.CreateTable<Customer>();
+                connection.Delete(item);
+                ReadDatabase();
+            }
         }
 
         private void ReadDatabase()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,21 @@ namespace WpfApp1
             if (NameTextBox.Text.Trim().Length < 1)//参考にする！！
             {
                 MessageBox.Show("名前を入力してください");
+                return;
+            }
+
+            using(var connection = new SQLiteConnection(App.DatabasePath))
+            {
+                connection.CreateTable<Customer>();
+                if (_customer == null)
+                {
+                    connection.Insert(new Customer(NameTextBox.Text));
+                }
+                else
+                {
+                    connection.Update(new Customer(_customer.Id, NameTextBox.Text));
+                }
+                Close();
             }
         }
     }

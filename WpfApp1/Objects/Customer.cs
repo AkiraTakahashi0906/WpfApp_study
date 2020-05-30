@@ -9,6 +9,19 @@ namespace WpfApp1.Objects
 {
     public class Customer
     {
+        public Customer()
+        {
+
+        }
+        public Customer(string name)
+        {
+            Name = name;
+        }
+        public Customer(int id , string name)
+        {
+            Id = id;
+            Name = name;
+        }
         [PrimaryKey,AutoIncrement]
         public int Id { get; set; }
         /// <summary>
