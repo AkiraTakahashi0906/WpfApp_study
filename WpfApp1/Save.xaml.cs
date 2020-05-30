@@ -34,7 +34,10 @@ namespace WpfApp1
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if(NameTextBox.Text.Trim().Length<)
+            if (NameTextBox.Text.Trim().Length < 1)//参考にする！！
+            {
+                MessageBox.Show("名前を入力してください");
+            }
         }
     }
 }

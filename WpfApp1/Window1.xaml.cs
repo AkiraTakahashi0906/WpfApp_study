@@ -77,7 +77,7 @@ namespace WpfApp1
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            _customers.Add(new Customer { Id = ++_index, Name = "name4", Phone = "phone4" });
+            _customers.Add(new Customer { Id = ++_index, Name = "name4", Phone = "phone4" });//参考にする
             //CustomerListView.ItemsSource = _customers;
         }
 
