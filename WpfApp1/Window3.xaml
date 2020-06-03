@@ -1,0 +1,69 @@
+﻿<Window x:Class="WpfApp1.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Window3" Height="500" Width="300">
+    <Grid>
+        <StackPanel>
+            <Button Margin="10"
+                    x:Name="NormalButton"
+                    Click="NormalButton_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Fill="Red"
+                                 Width="15"
+                                 Height="15"
+                                 Margin="0,0,50,0"/>
+                        <TextBlock Text="AAA"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+            <RepeatButton Content="repeat"
+                          FontSize="20"
+                          x:Name="RepeatButton"
+                          Click="RepeatButton_Click"
+                          Interval="2000"
+                          Delay="5000"/>
+
+            <ToggleButton Content="toggle"
+                          FontSize="20"
+                          x:Name="MyToggleButton"
+                          Click="MyToggleButton_Click"/>
+
+            <CheckBox x:Name="MyCheckBox"
+                      FontSize="20"
+                      Margin="10"
+                      Content="check box"
+                      VerticalContentAlignment="Center"
+                      Height="30"
+                      VerticalAlignment="Top"
+                      IsThreeState="True"
+                      Checked="MyCheckBox_Checked"
+                      Unchecked="MyCheckBox_Unchecked"
+                      Indeterminate="MyCheckBox_Indeterminate"
+                      IsChecked="{x:Null}"/>
+            
+            <StackPanel Margin="10">
+                <RadioButton Content="AAA" FontSize="20"/>
+                <RadioButton Content="BBB" FontSize="20"/>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <RadioButton Content="AAA" FontSize="20"/>
+                <RadioButton Content="BBB" FontSize="20"/>
+                <RadioButton 
+                                        x:Name="CRadioButton" Content="EEE" FontSize="20"
+                                        GroupName="1"
+                                        Checked="CRadioButton_Checked"/>
+                <RadioButton Content="FFFF" FontSize="20"
+                             GroupName="1"/>
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</Window>
