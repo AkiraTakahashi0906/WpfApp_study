@@ -66,13 +66,13 @@ namespace WpfApp1
 
         private void BButton_Click(object sender, RoutedEventArgs e)
         {
-            var item = AComboBox.SelectedItem as Customer;
+            var item = BComboBox.SelectedItem as Customer;
             if (item != null)
             {
                 var sb = new StringBuilder();
-                sb.AppendLine("AComboBox.SelectedIndex:" + AComboBox.SelectedIndex);
-                sb.AppendLine("AComboBox.SelectedValue:" + AComboBox.SelectedValue);
-                sb.AppendLine("AComboBox.Text" + AComboBox.Text);
+                sb.AppendLine("AComboBox.SelectedIndex:" + BComboBox.SelectedIndex);
+                sb.AppendLine("AComboBox.SelectedValue:" + BComboBox.SelectedValue);
+                sb.AppendLine("AComboBox.Text" + BComboBox.Text);
                 sb.AppendLine("---------------");
                 sb.AppendLine("SelectedItem.Id : " + item.Id);
                 sb.AppendLine("SelectedItem.name : " + item.Name);
